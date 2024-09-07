@@ -1,0 +1,251 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    max-width: 100vw;
+    padding: 2rem 1rem;
+    margin: 0 auto; 
+    overflow: hidden;
+    
+}
+.container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image:url(watermark1.jpg) ;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0.12;   
+}
+.header_container{
+    margin-bottom:2.8rem;
+}
+.header_title{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+.header_desc{
+    max-width: 568px;
+    text-align: center;
+    color: rgb(78, 73, 73);
+    margin: 0 auto;
+    font-size: 1.3rem;
+} 
+.main_container{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1,1fr);
+    max-width: 100%;
+    justify-self: center;
+    overflow: hidden;
+}
+@media(min-width:650px) {
+    .main_container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(min-width:1080px) {
+    .main_container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media(min-width:1340px) {
+    .main_container{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+.card_container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(124, 121, 121);
+    border-radius: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    max-width: 300px;
+    overflow: hidden;
+    
+    
+}
+.card_image_container{
+    position: relative;
+    overflow: hidden;
+    height: 14rem;
+}
+.card_image{
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card_title_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+
+}
+.card_container:hover .card_image{
+    transform: scale(1.2);
+    transition-duration: 200ms;
+}
+.card_title{
+    font-size: 2.19rem;
+    font-weight: bold;
+    color: rgb(44, 39, 39);
+    line-height:1.5rem;
+    margin-bottom: 0.3rem;
+} 
+.card_title_anchor:hover .card_title{
+    color: rgb(62, 62, 214);
+} 
+.card_desc{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.card_footer_container{
+    display: flex;
+    justify-content: space-between;
+}
+.author_container{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    gap: 1rem;
+}
+.author_avatar_container{
+    height: 2.5rem;
+    width: 2.5rem; 
+    overflow: hidden;
+    border: 1px solid rgb(132, 129, 129);
+    border-radius: 20px;
+    background-color: rgb(147, 139, 139);
+} 
+.author_avatar{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.author_info_container{
+    display: flex;
+    flex-direction: column;
+}
+.author_name{
+    color: rgb(67, 67, 192);
+    font-weight: bolder;
+}
+.author_date{
+    color: gray;
+}
+.card_tag_container{
+    display: flex;
+    align-items:center;
+    padding: 0.8rem;
+}
+.tech{
+    font-size: 1rem;
+    border: 1px solid rgb(109, 101, 101);
+    border-radius: 2px;
+    padding : 0;
+    line-height: 1.3rem;
+    color: gray;
+}
+.box1{
+    width: 350px;
+    height: 80px;
+    background-color: rgb(74, 72, 72);
+    border-radius: 10px;
+    margin: 10px;
+    border: 3px solid white;
+    position: fixed;
+    top: 0;
+    left:0;
+    animation-name: rightMovement;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    /* animation-fill-mode: forwards; stops the box at last it do not goes box. */
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family:fantasy;
+    box-shadow:5px 15px 25px black;
+}
+
+@keyframes rightMovement {
+ from{
+    top: 0;
+    left: 26vw;
+ }
+ to{
+    top: 45vh;
+    left: 26vw;
+ }
+}
+
+.box2{
+    width: 350px;
+    height: 80px;
+    background-color: rgb(74, 72, 72);
+    border-radius: 10px;
+    margin: 10px;
+    border: 3px solid white;
+    position: fixed;
+    bottom: 0;
+    right:0;
+    animation-name: leftMovement;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    /* animation-fill-mode: forwards; stops the box at last it do not goes box. */
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family:fantasy;
+    box-shadow:5px 15px 25px black;
+}
+
+@keyframes leftMovement {
+ from{
+    bottom:45vh;
+    right: 26vw;
+ }
+ to{
+    bottom: 90vh;
+    right: 26vw;
+ }
+}
